@@ -1,0 +1,105 @@
+<!-- Title -->
+<div id="page">
+    <div class="title">
+        <p>Eat · Da · Burger</p>
+        <hr class="line">
+    </div>
+    <div class='icon-scroll'></div>
+</div>
+<!--/. Title -->
+
+<!-- Menu Section -->
+<div class="menu">
+    <div class="container">
+        <h2 class="text-monospace">Menu Selection</h2>
+        <div class="row">
+            <!-- Hamburgers -->
+            <div class="col-sm">
+                <ul>
+                    <h5><i class="fas fa-hamburger"></i></h5>
+                    <li>Cheese burger</li>
+                    <li>Double cheese burger</li>
+                    <li>Spicy chicken burger</li>
+                    <li>Veggie burger</li>
+                    <li>Fish burger</li>
+                    <li>Steak sandwich</li>
+                </ul>
+            </div>
+            <!-- Sides -->
+            <div class="col-sm">
+                <ul>
+                    <h5><i class="fas fa-cookie-bite"></i></h5>
+                    <li>Hot chips</li>
+                    <li>Sweet potato chips</li>
+                    <li>Onion rings</li>
+                    <li>Cookies</li>
+                </ul>
+            </div>
+            <!-- Drinks -->
+            <div class="col-sm">
+                <ul>
+                    <h5><i class="fas fa-beer"></i></h5>
+                    <li>Molson Canadian</li>
+                    <li>House wine</li>
+                    <li>Asahi</li>
+                    <li>Sapporo</li>
+                    <li>Soju</li>
+                    <li>Bubble tea</li>
+                    <li>Coke</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/. Menu Section -->
+
+<!-- Order & Devoured -->
+<div id="devoured" class="orderDevoured">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-monospace text-center">Food Bucket</h4>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+                <form class="create-form font-weight-light text-muted" name="myForm" onsubmit="return validateForm()"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="bu"><em>* Don't see what you like? </em><br><br>
+                            <p>Place an order here: </p>
+                        </label>
+                        <input type="text" id="bu" name="name">
+                        <button id="button" type="submit"><i class="fas fa-plus"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="text-monospace text-center">Devoured It!</h4>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/. Order & Devoured -->
+
+<!-- Footer -->
+<footer>
+    <div id="footer-text">
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script> <span> Kathy Chen</span><br>
+        <p>Made with <i class="fas fa-heart" aria-hidden="true"></i> in Toronto, Canada</p>
+        <a href="http://github.com/xmkchen"><i class="fab fa-github-alt"><span>GitHub</span></i>
+    </div>
+</footer>
+<!--/. Footer -->

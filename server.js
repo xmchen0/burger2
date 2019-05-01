@@ -6,7 +6,13 @@ var connection = require('./config/connection')
 var PORT = process.env.PORT || 8080
 
 app.get('/', function(req, res){
-    res.send('hskhsfljksljfhsljfzkjhskfj')
+    connection.query("select * from todos", function(error, results){
+        if(error){
+            res.json(error)
+        }else{
+            res.json(results)
+        }
+    })
 })
 
 app.listen(PORT, function(){

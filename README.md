@@ -7,7 +7,7 @@ Note: This is the second version of Hello Burger as the [first version](https://
 
 ## Preview
 
-<a href="http://g.recordit.co/6Sflh8YXwk.gif"><img src="https://media.giphy.com/media/Sv3qvJdKgy1hIjqVoI/giphy.gif" border="0"></a>
+<a href="http://recordit.co/RGXAWlCqnS"><img src="https://media.giphy.com/media/THIeFUrXnWS5xmb2vb/giphy.gif" border="0"></a>
 
 ## Link to Heroku
 
